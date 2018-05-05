@@ -1,0 +1,49 @@
+{% extends 'layout.njk' %}
+
+{% block meta_description %}{{content.collection.title}}{% endblock %}
+
+{% block body %}
+  <h1>{{content.collection.title}}</h1>
+
+  <div class="pad-xl">
+    <div class="page-list">
+      {% for page in content.pages %}
+      <div class="page-wrapper">
+        <div class="page">
+          <div class="title">
+            <a href="/pages/{{page.slug}}"><h2>{{ page.title }}</h2></a>
+          </div>
+          <div class="image">
+            <img class="img-responsive" src="{{ page.featured_image }}" />
+          </div>
+          <div class="excerpt">
+            <p>{{ page.excerpt | safe | truncate }}</p> <a href="/pages/{{page.slug}}">Read More</a>
+          </div>
+        </div>
+      </div>
+      {% else %}
+        <h2>We have no blog posts!</h2>
+      {% endfor %}
+    </div>
+
+    {% set paginate = content.paginate %}
+    <div class="pagination">
+      {% if paginate.hasPrev %}
+        <a href="?pageNumber={{ paginate.pageNumber - 1 }}">&laquo;</a>
+      {% endif %}
+
+      {% for part in paginate.pageParts %}
+        {% if part.isCurrent %}
+          <a href="#" class='active'>{{ part.pageNumber }}</a>
+        {% else %}
+          <a href="?pageNumber={{ part.pageNumber }}">{{ part.pageNumber }}</a>
+        {% endif %}
+      {% endfor %}
+
+      {% if paginate.hasNext %}
+        <a href="?pageNumber={{ paginate.pageNumber + 1 }}">&raquo;</a>
+      {% endif %}
+    </div>
+  </div>
+
+{% endblock %}

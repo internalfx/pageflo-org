@@ -1,0 +1,104 @@
+
+@import "_shoelace.scss";
+
+img, video {
+  max-width: 100%;
+}
+
+p {
+  margin: 1.5rem 0;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #444;
+
+  a {
+    color: #eee;
+    padding: 15px 20px;
+    font-weight: bold;
+
+    &:hover {
+      color: hsl(200, 80%, 70%);
+      text-decoration: none;
+    }
+  }
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .page {
+    padding: 0 15px;
+    max-width: 1200px;
+  }
+}
+
+.pagination {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  a {
+    padding: 6px 12px;
+    line-height: 1.42857;
+    text-decoration: none;
+    color: #337ab7;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin-left: -1px;
+  }
+
+  a.active {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #337ab7;
+    cursor: default;
+  }
+
+  a:hover {
+    color: #23527c;
+    background-color: #eeeeee;
+    border-color: #ddd;
+  }
+}
+
+
+.page-list {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  align-items: flex-start;
+  justify-items: center;
+
+  .page-wrapper {
+    border: 2px solid #d7d7d7;
+    margin-bottom: 60px;
+
+    .page {
+      .title {
+        padding: 8px 18px;
+        min-height: 105px;
+      }
+
+      .image {
+
+      }
+
+      .excerpt {
+        padding: 8px 18px 15px;
+
+        p {
+          margin: 0;
+        }
+      }
+    }
+  }
+}

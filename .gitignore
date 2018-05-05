@@ -1,0 +1,4 @@
+node_modules/
+.tmp
+config/env/dev.js
+config/env/prod.js

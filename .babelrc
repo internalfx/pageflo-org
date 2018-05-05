@@ -1,0 +1,19 @@
+{
+  "presets": [
+    ["env", {
+      "targets": {
+        "browsers": ["> 5% in US"],
+        "uglify": false
+      },
+      "exclude": [
+        "transform-regenerator",
+        "transform-async-to-generator"
+      ],
+      "useBuiltins": true,
+      "debug": false
+    }]
+  ],
+  "plugins": [
+    ["transform-object-rest-spread", {"useBuiltIns": true}]
+  ]
+}

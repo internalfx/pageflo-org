@@ -1,0 +1,10 @@
+{% extends 'layout.njk' %}
+
+{% block meta_description %}{{page.meta_description | truncate}}{% endblock %}
+
+{% block body %}
+  <div class="pad-xl">
+    <h1>{{ page.title }}</h1>
+    <p>{{ page.html | safe }}</p>
+  </div>
+{% endblock %}
