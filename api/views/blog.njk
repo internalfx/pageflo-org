@@ -7,17 +7,17 @@
 
   <div class="pad-xl">
     <div class="page-list">
-      {% for page in content.pages %}
+      {% for block in content.blocks %}
       <div class="page-wrapper">
         <div class="page">
           <div class="title">
-            <a href="/pages/{{page.slug}}"><h2>{{ page.title }}</h2></a>
+            <a href="/content/{{block.slug}}"><h2>{{ block.title }}</h2></a>
           </div>
           <div class="image">
-            <img class="img-responsive" src="{{ page.featured_image }}" />
+            <img class="img-responsive" src="{{ block.featured_image }}" />
           </div>
           <div class="excerpt">
-            <p>{{ page.excerpt | safe | truncate }}</p> <a href="/pages/{{page.slug}}">Read More</a>
+            <p>{{ block.excerpt | safe | truncate }}</p> <a href="/content/{{block.slug}}">Read More</a>
           </div>
         </div>
       </div>

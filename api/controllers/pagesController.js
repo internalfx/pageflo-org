@@ -13,10 +13,10 @@ module.exports = {
     ctx.body = await ctx.render('index.njk', {content})
   },
 
-  page: async function (ctx) {
+  content: async function (ctx) {
     let params = ctx.state.params
 
-    let page = await pageFlo.getPage({slug: params.slug, headers: ctx.headers})
+    let page = await pageFlo.getBlock({slug: params.slug, headers: ctx.headers})
 
     ctx.body = await ctx.render('page.njk', {page})
   }

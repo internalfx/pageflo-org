@@ -4,7 +4,9 @@ module.exports = {
   'get /assets/:path*': 'appController.assets',
 
   'get /blog': 'collectionController.blog',
+  'get /guide': 'collectionController.guide',
+  'get /docs': 'collectionController.docs',
 
   'get /': 'pagesController.index',
-  'get /pages/:slug': 'pagesController.page'
+  'get /content/:slug': 'pagesController.content'
 }

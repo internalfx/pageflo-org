@@ -1,5 +1,10 @@
 {% extends 'layout.njk' %}
 
 {% block body %}
-  {{ content.body.html | safe }}
+  <div class="hero">
+    {{ content.hero.html | safe }}
+  </div>
+  <div class="body">
+    {{ content.body.html | safe }}
+  </div>
 {% endblock %}
