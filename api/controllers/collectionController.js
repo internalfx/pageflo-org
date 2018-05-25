@@ -14,14 +14,6 @@ module.exports = {
     ctx.body = await ctx.render('blog.njk', {content})
   },
 
-  guide: async function (ctx) {
-    let params = ctx.state.params
-    let pageNumber = params.pageNumber || 1
-    let content = await pageFlo.getCollection({id: 1, pageSize: 3, pageNumber, headers: ctx.headers})
-
-    ctx.body = await ctx.render('blog.njk', {content})
-  },
-
   docs: async function (ctx) {
     let params = ctx.state.params
     let pageNumber = params.pageNumber || 1

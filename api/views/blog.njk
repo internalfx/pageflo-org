@@ -13,9 +13,11 @@
           <div class="title">
             <a href="/content/{{block.slug}}"><h2>{{ block.title }}</h2></a>
           </div>
+          {% if block.featured_image %}
           <div class="image">
             <img class="img-responsive" src="{{ block.featured_image }}" />
           </div>
+          {% endif %}
           <div class="excerpt">
             <p>{{ block.excerpt | safe | truncate }}</p> <a href="/content/{{block.slug}}">Read More</a>
           </div>
